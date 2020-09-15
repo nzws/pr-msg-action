@@ -25,7 +25,7 @@ import execLogger from './utils/exec-logger';
     if (result) {
       await octokit.issues.createComment({
         ...repository,
-        body: '`' + command + '`:\n```\n' + result + '\n```\n',
+        body: '`' + command + '`:\n```\n' + result + '```\n',
         issue_number: pull_request.number
       });
     }
