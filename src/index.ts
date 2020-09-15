@@ -22,11 +22,13 @@ import execLogger from './utils/exec-logger';
     }
 
     const result = await execLogger(command);
-    await octokit.issues.createComment({
-      ...repository,
-      body: '`' + command + '`:\n```\n' + result + '\n```\n',
-      issue_number: pull_request.number
-    });
+    if (result) {
+      await octokit.issues.createComment({
+        ...repository,
+        body: '`' + command + '`:\n```\n' + result + '\n```\n',
+        issue_number: pull_request.number
+      });
+    }
   } catch (e) {
     core.setFailed(e.message);
   }
