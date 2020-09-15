@@ -16,6 +16,7 @@ import execLogger from './utils/exec-logger';
       owner: repo.owner
     };
 
+    core.debug(command);
     if (!pull_request) {
       return;
     }
