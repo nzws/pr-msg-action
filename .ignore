@@ -62,6 +62,7 @@ typings/
 
 # Parcel build output
 .cache
+dist
 
 .vscode
 .idea
@@ -69,5 +70,6 @@ typings/
 *-debug.log
 *-error.log
 /.nyc_output
+/dist
 /tmp
-build/
+build

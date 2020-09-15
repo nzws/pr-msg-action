@@ -1,0 +1,13 @@
+name: 'pr-msg-action'
+author: 'nzws <dev+action@nzws.me>'
+description: 'Comment the result of any command on the pull request.'
+inputs:
+  token:
+    description: "GitHub's token"
+    required: true
+  command:
+    description: 'Command to be executed.'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
