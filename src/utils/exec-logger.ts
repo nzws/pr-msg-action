@@ -1,3 +1,4 @@
+import * as core from '@actions/core';
 import { exec, ExecOptions } from '@actions/exec';
 
 const execLogger = async (
@@ -20,6 +21,7 @@ const execLogger = async (
 
     return output;
   } catch (e) {
+    core.error(e);
     return output;
   }
 };
