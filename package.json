@@ -9,12 +9,10 @@
   "private": true,
   "scripts": {
     "lint:prettier": "prettier --check --ignore-path .ignore .",
-    "lint:eslint": "eslint --cache --ignore-path .ignore \"**/*.js\"",
+    "lint:eslint": "eslint --cache --ignore-path .ignore \"**/*.{ts,js}\"",
     "lint:ts": "tsc",
     "lint": "npm-run-all lint:* -s",
-    "format-all": "prettier --write --ignore-path .ignore .",
     "format:prettier": "prettier --write --ignore-path .ignore .",
-    "format:js": "eslint --cache --fix --ignore-path .ignore \"**/*.js\"",
     "format": "npm-run-all format:* -s",
     "build:ts": "tsc",
     "build:pack": "ncc build build/index.js --minify",
@@ -28,17 +26,17 @@
   "devDependencies": {
     "@nzws/prettier-config": "^1.0.0",
     "@types/prettier": "^2.0.1",
-    "@typescript-eslint/eslint-plugin": "^3.4.0",
-    "@typescript-eslint/parser": "^3.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
     "@yuzulabo/eslint-config": "^1.0.1",
     "@zeit/ncc": "^0.22.3",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
-    "eslint": "~7.3.1",
+    "eslint": "~7.9.0",
     "eslint-config-prettier": "^6.11.0",
     "npm-run-all": "~4",
     "prettier": "^2.0.5",
-    "typescript": "^3.9.5"
+    "typescript": "^4.0.2"
   },
   "prettier": "@nzws/prettier-config"
 }
