@@ -1,5 +1,6 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
+import stripAnsi from 'strip-ansi';
 import execLogger from './utils/exec-logger';
 
 (async () => {
@@ -25,7 +26,7 @@ import execLogger from './utils/exec-logger';
     if (result) {
       await octokit.issues.createComment({
         ...repository,
-        body: '`' + command + '`:\n```\n' + result + '```\n',
+        body: '`' + command + '`:\n```\n' + stripAnsi(result) + '```\n',
         issue_number: pull_request.number
       });
     }
